@@ -5,7 +5,10 @@ class Book {
         this.pages = pages;
         this.readStatus = readStatus;
     }
-    info() {
-        return `The ${this.title} by ${this.author}, ${this.pages}, ${this.readStatus}`
+    getInfo() {
+        return {title: this.title, author: this.author, pages: this.pages, readStatus: this.readStatus};
+    }
+    update(property, value) {
+        this[property] = value;
     }
 }
