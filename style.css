@@ -1,0 +1,138 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+  body{
+    background-color: #1B263B;
+    color: #E0E1DD;
+  }
+
+  .header {
+    background-color: #0D1B2A;
+    color: #E0E1DD;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+.material-symbols-outlined {
+  color: #E0E1DD;
+  font-variation-settings:
+  /* 'FILL' 10, */
+  'wght' 400,
+  'GRAD' 20,
+  'opsz' 24
+}
+main {
+  margin-top: 80px;
+  padding: 20px;
+}
+.library-container {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.book-card {
+  outline: none;
+  border: none;
+  border-left: 12px solid #E0E1DD;
+  background-color: #778DA9;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  display: grid;
+  grid-template-rows: 2fr repeat(3, 1fr);
+}
+
+.book-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #0D1B2A;
+  color: #E0E1DD;
+  border: 4px dashed #778DA9;
+  border-radius: 5px;
+}
+
+.book-add:hover {
+  opacity: 0.8;
+  background-color: #778DA9;
+  border-color: #0D1B2A;
+}
+
+.book-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-actions button {
+  padding: 10px 20px;
+  background-color: #0D1B2A;
+  color: #E0E1DD;
+  border: none;
+  border-radius: 5px;
+}
+
+.book-actions .read {
+  background-color: #4CAF50;
+}
+
+.book-actions .not-read {
+  background-color: #F44336;
+}
