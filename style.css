@@ -98,6 +98,7 @@
 
 .book-add {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -107,10 +108,17 @@
   border: 4px dashed #778DA9;
   border-radius: 5px;
   min-height: 280px;
+  .material-symbols-outlined {
+    font-size: 8rem;
+    color: #778DA9;
+  }
   &:hover {
     opacity: 0.8;
     background-color: #778DA9;
     border-color: #0D1B2A;
+    .material-symbols-outlined {
+      color: #E0E1DD;
+    }
   }
 }
 
