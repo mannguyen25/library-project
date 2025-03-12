@@ -1,4 +1,3 @@
-const libraryContainer = document.querySelector('.library-container');
 // event listener for adding to library
 const addBookForm = document.querySelector('.book-add');
 const modal = document.querySelector('#book-modal');
@@ -37,9 +36,10 @@ class Book {
 }
 
 class Shelf {
-    constructor(books=[]) {
+    constructor(books=[], libraryContainer) {
         // properties for each shelf instance
         this.books = books;
+        this.libraryContainer = libraryContainer;
     }
     displayShelf() {
         this.books.forEach(book => {
@@ -83,7 +83,7 @@ class Shelf {
             
             actions.appendChild(deletebtn);
             bookElement.appendChild(actions);
-            libraryContainer.insertBefore(bookElement, libraryContainer.lastElementChild);
+            this.libraryContainer.insertBefore(bookElement, libraryContainer.lastElementChild);
         });
     }
     addBook(book) {
@@ -124,7 +124,7 @@ class Shelf {
         deletebtn.textContent = "Delete";
         actions.appendChild(deletebtn);
         bookElement.appendChild(actions);
-        libraryContainer.insertBefore(bookElement, libraryContainer.lastElementChild);
+        this.libraryContainer.insertBefore(bookElement, libraryContainer.lastElementChild);
     }
     removeBook(book) {
         // method to remove a book from the shelf
@@ -133,7 +133,8 @@ class Shelf {
         libraryContainer.removeChild(bookElement);
     }
 }
-const myShelf = new Shelf([new Book('Battle Mountain', 'C.J. Box', 368, true), new Book('Harry Potter', 'J.K. Rowling', 350, false)]);
+const libraryContainer = document.querySelector('.library-container');
+const myShelf = new Shelf([new Book('Battle Mountain', 'C.J. Box', 368, true), new Book('Harry Potter', 'J.K. Rowling', 350, false)], libraryContainer);
 myShelf.displayShelf();
 // display books on the page
 
