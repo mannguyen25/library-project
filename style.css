@@ -93,7 +93,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   gap: 10px;
   display: grid;
-  grid-template-rows: 2fr repeat(3, 1fr);
+  grid-template-rows:repeat(4, 1fr);
 }
 
 .book-add {
@@ -116,7 +116,7 @@
 
 .book-actions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   align-items: center;
   & button {
@@ -133,6 +133,11 @@
     background-color: #F44336;
   }
 }
+#book-modal *{
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
 
 #book-modal {
   left: 0;
@@ -141,6 +146,10 @@
   bottom: 0;
   margin: auto;
   position: absolute;
+  background-color: #778DA9;
+  border: none;
+  outline: none;
+  border-radius: 8px;
   & #book-form {
     text-align: right;
     display: grid;
@@ -150,8 +159,15 @@
     & label {
       padding: 1rem;
     }
+    & input,
+    & textarea, & select {
+      padding: 1rem;
+      border: none;
+    }
     .submit-btn {
       grid-column: span 2;
+      background-color: #0D1B2A;
+      color: #E0E1DD;
     }
   }
 
