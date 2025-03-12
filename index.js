@@ -47,6 +47,7 @@ const myShelf = new Shelf([new Book('Battle Mountain', 'C.J. Box', 368, true), n
 
 const libraryContainer = document.querySelector('.library-container');
 
+// display books on the page
 myShelf.books.reverse().forEach(book => {
     const bookElement = document.createElement('div');
     bookElement.classList.add('book-card');

@@ -107,32 +107,29 @@ main {
   color: #E0E1DD;
   border: 4px dashed #778DA9;
   border-radius: 5px;
-}
-
-.book-add:hover {
-  opacity: 0.8;
-  background-color: #778DA9;
-  border-color: #0D1B2A;
+  &:hover {
+    opacity: 0.8;
+    background-color: #778DA9;
+    border-color: #0D1B2A;
+  }
 }
 
 .book-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  & button {
+    padding: 10px 20px;
+    background-color: #0D1B2A;
+    color: #E0E1DD;
+    border: none;
+    border-radius: 5px;
+  }
+  .read {
+    background-color: #4CAF50;
+  }
+  .not-read {
+    background-color: #F44336;
+  }
 }
 
-.book-actions button {
-  padding: 10px 20px;
-  background-color: #0D1B2A;
-  color: #E0E1DD;
-  border: none;
-  border-radius: 5px;
-}
-
-.book-actions .read {
-  background-color: #4CAF50;
-}
-
-.book-actions .not-read {
-  background-color: #F44336;
-}
