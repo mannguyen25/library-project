@@ -48,22 +48,24 @@
   body{
     background-color: #1B263B;
     color: #E0E1DD;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+    overflow: hidden;
   }
-
+  main {
+    padding: 2rem;
+  }
   .header {
     background-color: #0D1B2A;
     color: #E0E1DD;
     padding: 10px;
     text-align: center;
-    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
   }
 
 .material-symbols-outlined {
@@ -74,14 +76,11 @@
   'GRAD' 20,
   'opsz' 24
 }
-main {
-  margin-top: 80px;
-  padding: 20px;
-}
+
 .library-container {
   display: grid;
   gap: 4rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .book-card {
@@ -107,6 +106,7 @@ main {
   color: #E0E1DD;
   border: 4px dashed #778DA9;
   border-radius: 5px;
+  min-height: 280px;
   &:hover {
     opacity: 0.8;
     background-color: #778DA9;
@@ -115,8 +115,9 @@ main {
 }
 
 .book-actions {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   align-items: center;
   & button {
     padding: 10px 20px;
@@ -133,3 +134,29 @@ main {
   }
 }
 
+#book-modal {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  & #book-form {
+    text-align: right;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: 1fr;
+    row-gap: 1rem;
+    & label {
+      padding: 1rem;
+    }
+    .submit-btn {
+      grid-column: span 2;
+    }
+  }
+
+  &::backdrop {
+    background-color: #0D1B2A;
+    opacity: 0.5;
+  }
+}
